@@ -3,8 +3,7 @@ package entity;
 import java.io.Serializable;
 import java.sql.Date;
 
-public class Certificate implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class Certificate {
     private int certificateID;
     private String certificateName;
     private String certificateRank;

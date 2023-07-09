@@ -3,10 +3,13 @@ package dao;
 import entity.Candidate;
 
 import java.sql.SQLException;
+import java.util.List;
 
 
 public interface CandidateDAO {
     void addDetailInfo(Candidate candidate) throws SQLException;
-    void add(Candidate candidate);
-
+    boolean addCandidateUsePrepared();
+    Candidate inputCandidate();
+    List<Candidate> getAllCandidate();
+    void getFullName();
 }

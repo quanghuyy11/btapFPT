@@ -1,20 +1,21 @@
 package entity;
 
-import java.io.Serializable;
 import java.sql.Date;
 
-public abstract class Candidate implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class Candidate {
     private int candidateID;
     private String fullName;
     private Date birthDay;
     private String phone;
     private String email;
-    private String candidateType;
-    private int candidateCount;
+    private int candidateType;
+    public static int candidateCount = 0;
 
+    public Candidate(){
+        candidateCount++;
+    }
 
-    public Candidate(int candidateID, String fullName, Date birthDay, String phone, String email, String candidateType) {
+    public Candidate(int candidateID, String fullName, Date birthDay, String phone, String email, int candidateType) {
         super();
         this.candidateID = candidateID;
         this.fullName = fullName;
@@ -22,6 +23,7 @@ public abstract class Candidate implements Serializable {
         this.phone = phone;
         this.email = email;
         this.candidateType = candidateType;
+        candidateCount++;
     }
 
     public int getCandidateID() {
@@ -41,7 +43,7 @@ public abstract class Candidate implements Serializable {
     }
 
     public String getBirthDay() {
-        return birthDay;
+        return String.valueOf(birthDay);
     }
 
     public void setBirthDay(Date birthDay) {
@@ -64,20 +66,16 @@ public abstract class Candidate implements Serializable {
         this.email = email;
     }
 
-    public String getCandidateType() {
+    public int getCandidateType() {
         return candidateType;
     }
 
-    public void setCandidateType(String candidateType) {
+    public void setCandidateType(int candidateType) {
         this.candidateType = candidateType;
     }
 
-    public int getCandidateCount() {
-        return this.candidateCount++;
-    }
 
-    @Override
-    public String toString() {
+    public String showMe() {
         return "Candidate{" +
                 "candidateID=" + candidateID + '\n' +
                 ", fullName='" + fullName + '\n' +
@@ -88,6 +86,4 @@ public abstract class Candidate implements Serializable {
                 ", candidateCount=" + candidateCount +
                 '}';
     }
-
-    public abstract void showMe();
 }

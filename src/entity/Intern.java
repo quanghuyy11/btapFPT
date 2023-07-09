@@ -8,7 +8,7 @@ public class Intern extends Candidate {
     private String universityName;
 
     public Intern(int candidateID, String fullName, Date birthDay, String phone,
-                  String email, String candidateType, String majors, String semester, String universityName) {
+                  String email, int candidateType, String majors, String semester, String universityName) {
         super(candidateID, fullName, birthDay, phone, email, candidateType);
         this.majors = majors;
         this.semester = semester;
@@ -40,17 +40,12 @@ public class Intern extends Candidate {
     }
 
     @Override
-    public String toString() {
+    public String showMe() {
         return super.toString() + '\n' +
-                "Intern{" +
+                "Intern:" + '\n' +
                 "majors='" + majors + '\n' +
-                ", semester='" + semester + '\n' +
-                ", universityName='" + universityName +
-                '}';
-    }
+                "semester='" + semester + '\n' +
+                "universityName='" + universityName;
 
-    @Override
-    public void showMe(){
-        System.out.println(this);
     }
 }

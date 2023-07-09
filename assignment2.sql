@@ -8,7 +8,7 @@ create table candidate (
     birthDay date,
     phone varchar(10),
     email varchar(30),
-    candidateTypeID varchar(20)
+    candidateType int
 );
 
 create table experience(
@@ -28,7 +28,7 @@ create table fresher(
 
 create table intern(
 	candidateID int primary key,
-	ajors varchar(20),
+	majors varchar(20),
     semester varchar(20),
     universityName varchar(30),
     constraint fk_intern foreign key (candidateID) references candidate(candidateID)
@@ -43,4 +43,6 @@ create table certificate (
     candidateID int,
     constraint fk_candidate foreign key (candidateID) references candidate(candidateID)
 );
+
+drop database assignment2
 

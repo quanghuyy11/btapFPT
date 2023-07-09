@@ -8,25 +8,43 @@ public class Fresher extends Candidate {
     private String education;
 
     public Fresher(int candidateID, String fullName, Date birthDay, String phone, String email,
-                   String candidateType, Date graduationDate, String graduationRank, String education) {
+                   int candidateType, Date graduationDate, String graduationRank, String education) {
         super(candidateID, fullName, birthDay, phone, email, candidateType);
         this.graduationDate = graduationDate;
         this.graduationRank = graduationRank;
         this.education = education;
     }
 
-    @Override
-    public String toString() {
-        return super.toString() + '\n' +
-                "Fresher{" +
-                "graduationDate=" + graduationDate + '\n' +
-                ", graduationRank='" + graduationRank + '\n' +
-                ", education='" + education + '\n' +
-                '}';
+    public Date getGraduationDate() {
+        return graduationDate;
+    }
+
+    public void setGraduationDate(Date graduationDate) {
+        this.graduationDate = graduationDate;
+    }
+
+    public String getGraduationRank() {
+        return graduationRank;
+    }
+
+    public void setGraduationRank(String graduationRank) {
+        this.graduationRank = graduationRank;
+    }
+
+    public String getEducation() {
+        return education;
+    }
+
+    public void setEducation(String education) {
+        this.education = education;
     }
 
     @Override
-    public void showMe() {
-        System.out.println(this);
+    public String showMe() {
+        return super.showMe() + '\n' +
+                "Fresher:" + '\n' +
+                "graduationDate=" + graduationDate + '\n' +
+                "graduationRank='" + graduationRank + '\n' +
+                "education='" + education;
     }
 }
